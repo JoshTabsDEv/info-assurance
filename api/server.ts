@@ -24,7 +24,10 @@ const db = mysql.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  port: process.env.DB_PORT ? parseInt(process.env.DB_PORT, 10) : 3306,
+  port: parseInt(process.env.DB_PORT, 10),
+  ssl: {
+    rejectUnauthorized: true // Enforce SSL for DO
+  }
 });
 
 const client = new OAuth2Client("759282268919-cfu3n7h5ao3e7v5f2dpsaoj2r7njj8t0.apps.googleusercontent.com");

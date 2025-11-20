@@ -11,7 +11,7 @@ export default function Login() {
   // === Regular login ===
   const handleLogin = async () => {
     const api = axios.create({
-      baseURL: "http://localhost:4000",
+      baseURL: "http://info-assurance-opal.vercel.app:4000",
       headers: { "Content-Type": "application/json" },
     });
 
@@ -39,7 +39,7 @@ export default function Login() {
         return;
       }
 
-      const res = await axios.post("http://localhost:4000/google-login", {
+      const res = await axios.post("http://info-assurance-opal.vercel.app:4000/google-login", {
         token: credentialResponse.credential,
       });
 
