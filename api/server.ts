@@ -130,6 +130,8 @@ app.post("/google-login", async (req, res) => {
 // Get List of departments
 app.get("/departments", async (req, res) => {
   try {
+    const add = req;
+    console.log(add)
     const [rows] = await db.query("SELECT * FROM departments");
     res.json(rows);
   } catch (error) {

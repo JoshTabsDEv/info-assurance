@@ -30,5 +30,5 @@
     "esModuleInterop": true,
     "strict": true
   },
-  "include": ["server/**/*"]
+  "include": ["api/**/*"]
 }
